@@ -1,0 +1,13 @@
+version: '3.3'
+services:
+  db:
+    image: "postgres_image"
+    volumes:
+      - database-data:/var/lib/postgresql/data/
+      - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+    ports: 
+      - 5433:5432
+
+volumes:
+  database-data: {}
+
